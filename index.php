@@ -5,41 +5,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-    <style type="text/css">
-        body{
-        
-            padding: 50px;
-
-        }
-    </style>
-
     <title>To Do List</title>
+
+
+<!-- Adpted from https://v4-alpha.getbootstrap.com/components/navbar/ -->
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">To Do List</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Add List <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Edit List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Delete List</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   </head>
-  <body>
-<!-- Adpted from https://www.tutorialspoint.com/bootstrap/bootstrap_navbar.htm -->
-    <nav class="navbar navbar-default" role="navigation">
-        <div class ="navbar-header">
-            <button type="button" class="navbar-toggle"
-                data-toggle="collapse" data-target="#nav">
-                <span class="sr-only">Toggle Navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">To Do List</a>
-        </div>
-        <div class="collapse navbar-collapse" id="nav">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Add List</a></li>
-                <li><a href="#">Edit List</a></li>
-                <li><a href="#">Delete List</a></li>
-            </ul>
-         </div>
-        </nav>
+  <body>    
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
