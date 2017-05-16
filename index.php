@@ -64,7 +64,7 @@
         );
 
         $conn = sqlsrv_connect($serverName, $connectionOptions);
-        echo ("Connecting?" . PHP_EOL);
+       //echo ("Connecting?" . PHP_EOL);
       
     ?>
 
