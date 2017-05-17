@@ -72,7 +72,7 @@
 </html>
 
  <?php
-        $serverName = "tdldatabase.database.windows.net";
+       /* $serverName = "tdldatabase.database.windows.net";
         $connectionOptions = array(
             "Database" => "user",
             "Uid" => "laura",
@@ -81,6 +81,17 @@
         );
 
         $conn = sqlsrv_connect($serverName, $connectionOptions);
-       echo ("Connecting?" . PHP_EOL);
-      
+       echo ("Connecting?" . PHP_EOL);*/
+      $serverName = "tdldatabase.database.windows.net";
+      $uname = "laura";
+      $pwd = "ABCd1234";
+      $database = "users";
+
+      try{
+          $conn = new PDO("sqlsvr:Server=$serverName; Database=$database", $uname, $pwd);
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      }
+      catch(Exception $e){
+          die(var_dump($e));
+      }
     ?>

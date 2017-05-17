@@ -8,7 +8,6 @@
 
     <title>To Do List</title>
 
-
 <!-- Adpted from https://v4-alpha.getbootstrap.com/components/navbar/ -->
    <nav class="navbar navbar-inverse bg-inverse">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,7 +16,7 @@
         <a class="navbar-brand" href="#"><h2>To Do List</h2></a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav navbar-nav">
-                <li class="dropdwon">
+               <!-- <li class="dropdwon">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Add List <span class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
                             <form method="post" id="addForm">
@@ -33,10 +32,46 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Delete List</a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav> 
+    <div>
+        <form class="form-horizontal" method="post" action="#">
+
+            <div class="form-group">
+                <label for="username" class="cols-sm-2 control-label">Username</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="username" id="uname"  placeholder="Enter your Username"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="cols-sm-2 control-label">Password</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <input type="password" class="form-control" name="password" id="pwd"  placeholder="Enter your Password"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+                    </div>
+            </div>
+
+            <div class="form-group ">
+                <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+            </div>
+            <div class="login-register">
+                <a href="index.php">Login</a>
+                </div>
+        </form>
+    </div>
 
     <!-- Bootstrap CSS -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -55,17 +90,31 @@
 </html> 
 
     <?php
-       /* $serverName = "tdldatabase.database.windows.net";
+        $serverName = "tdldatabase.database.windows.net";
         $connectionOptions = array(
             "Database" => "todolist",
             "Uid" => "laura",
-            "PWD" => "ABCd1234",
-            "MultipleActiveResultSets" => false
+            "PWD" => "ABCd1234"
         );
 
         $conn = sqlsrv_connect($serverName, $connectionOptions);
-       echo ("Connecting?" . PHP_EOL);*/
-      
+        if($conn === false){
+            die(print_r(sqlsrv_errors(), true));
+        }
+
+        if(isset($_GET['action'])) {
+           if($_GET['action'] == 'reg'){
+               $insert = "INSERT INTO users (username, password) VALUES (?,?)";
+               $data = array(&$_POST['uname'], &$_POST['pwd']);
+               $stmt = sqlsrv_query($conn, $insert, $data);
+               if($stmt === false){
+                   $errors = sqlsrv_erro-rs();
+               }
+           }
+           else{
+               echo "Reg successful";
+           }
+        }
     ?>
 
  
