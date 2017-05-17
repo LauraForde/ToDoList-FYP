@@ -105,8 +105,8 @@
         if(isset($_GET['action'])) {
            if($_GET['action'] == 'reg'){
                $insert = "INSERT INTO users (username, password) VALUES (?,?)";
-               $data = array(&$_POST['uname'], &$_POST['pwd']);
-               $stmt = sqlsrv_query($conn, $insert, $data);
+               //$data = array(&$_POST['uname'], &$_POST['pwd']);
+               $stmt = sqlsrv_query($conn, $insert/*, $data*/);
                if($stmt === false){
                    $errors = sqlsrv_erro-rs();
                }
