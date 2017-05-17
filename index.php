@@ -55,7 +55,7 @@
 </html> 
 
     <?php
-        $serverName = "tdldatabase.database.windows.net";
+       /* $serverName = "tdldatabase.database.windows.net";
         $connectionOptions = array(
             "Database" => "todolist",
             "Uid" => "laura",
@@ -64,7 +64,7 @@
         );
 
         $conn = sqlsrv_connect($serverName, $connectionOptions);
-       //echo ("Connecting?" . PHP_EOL);
+       echo ("Connecting?" . PHP_EOL);*/
       
     ?>
 

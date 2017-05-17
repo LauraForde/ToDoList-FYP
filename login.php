@@ -70,3 +70,17 @@
     
 	</body>
 </html>
+
+ <?php
+        $serverName = "tdldatabase.database.windows.net";
+        $connectionOptions = array(
+            "Database" => "user",
+            "Uid" => "laura",
+            "PWD" => "ABCd1234",
+            "MultipleActiveResultSets" => false
+        );
+
+        $conn = sqlsrv_connect($serverName, $connectionOptions);
+       echo ("Connecting?" . PHP_EOL);
+      
+    ?>
