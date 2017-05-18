@@ -35,7 +35,12 @@
                     <a class="nav-link" href="#">Edit List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="delete.php">Delete List</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Delete List <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
+                        <form method="post" id="deleteForm" action="delete.php">
+                        <input style="margin-bottom: 15px;" type="text" placeholder="ID of List You Want to Delete" id="did" name="did"/>
+                        <input class="btn btn-primary btn-block" button type="submit" name="deletelist" value="Delete List"/>
+                     </form>           
                 </li> 
             </ul>
         </div>
