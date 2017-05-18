@@ -17,7 +17,7 @@
 
 	if ($getResults){
 		echo "Deleted";
-        Redirect('http://localhost:8080/todolist/index.php', false);
+        Redirect('http://todolisting.azurewebsites.net/index.php', false);
     }
 	else{
 		echo "ERROR";
