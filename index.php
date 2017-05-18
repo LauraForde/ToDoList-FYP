@@ -16,12 +16,16 @@
         <a class="navbar-brand" href="#"><h2>To Do List</h2></a>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav navbar-nav">
-               <!-- <li class="dropdwon">
+                <li class="dropdwon">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Add List <span class="sr-only">(current)</span></a>
                         <div class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
-                            <form method="post" id="addForm">
+                            <form method="post" id="addForm" action="add.php">
                                 <input style="margin-bottom: 15px;" type="text" placeholder="List ID" id="id" name="id"/>
-                                <input style="margin-bottom: 15px;" type="text" placeholder="List Items" id="listitems" name="listitems"/>
+                                <input style="margin-bottom: 15px;" type="text" placeholder="Item 1" id="item1" name="item1"/>
+                                <input style="margin-bottom: 15px;" type="text" placeholder="Item 2" id="item2" name="item2"/>
+                                <input style="margin-bottom: 15px;" type="text" placeholder="Item 3" id="item3" name="item3"/>
+                                <input style="margin-bottom: 15px;" type="text" placeholder="Item 4" id="item4" name="item4"/>
+                                <input style="margin-bottom: 15px;" type="text" placeholder="Item 5" id="item5" name="item5"/>
                                 <input class="btn btn-primary btn-block" button type="submit" name="addlist" value="Add List"/>
                                 <input class="btn btn-primary btn-block" type="button" id="cancel" value="Cancel"/>
                             </form>
@@ -32,46 +36,10 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Delete List</a>
-                </li> -->
+                </li> 
             </ul>
         </div>
     </nav> 
-    <div>
-        <form class="form-horizontal" method="post" action="#">
-
-            <div class="form-group">
-                <label for="username" class="cols-sm-2 control-label">Username</label>
-                <div class="cols-sm-10">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="username" id="uname"  placeholder="Enter your Username"/>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="password" class="cols-sm-2 control-label">Password</label>
-                <div class="cols-sm-10">
-                    <div class="input-group">
-                        <input type="password" class="form-control" name="password" id="pwd"  placeholder="Enter your Password"/>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Confirm Password</label>
-                    <div class="input-group">
-                        <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-                    </div>
-            </div>
-
-            <div class="form-group ">
-                <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
-            </div>
-            <div class="login-register">
-                <a href="index.php">Login</a>
-                </div>
-        </form>
-    </div>
 
     <!-- Bootstrap CSS -->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -94,27 +62,10 @@
         $connectionOptions = array(
             "Database" => "todolist",
             "Uid" => "laura",
-            "PWD" => "ABCd1234"
+            "PWD" => "ABCd1234",
+            "MultipleActiveResultSets" => false
         );
 
-        $conn = sqlsrv_connect($serverName, $connectionOptions);
-        if($conn === false){
-            die(print_r(sqlsrv_errors(), true));
-        }
-
-        if(isset($_GET['action'])) {
-           if($_GET['action'] == 'reg'){
-               $insert = "INSERT INTO users (username, password) VALUES (?,?)";
-               //$data = array(&$_POST['uname'], &$_POST['pwd']);
-               $stmt = sqlsrv_query($conn, $insert/*, $data*/);
-               if($stmt === false){
-                   $errors = sqlsrv_erro-rs();
-               }
-           }
-           else{
-               echo "Reg successful";
-           }
-        }
     ?>
 
  
