@@ -25,7 +25,7 @@
                                 <input style="margin-bottom: 15px;" type="text" placeholder="Item 2" id="item2" name="item2"/>
                                 <input style="margin-bottom: 15px;" type="text" placeholder="Item 3" id="item3" name="item3"/>
                                 <input style="margin-bottom: 15px;" type="text" placeholder="Item 4" id="item4" name="item4"/>
-                                <input style="margin-bottom: 15px;" type="text" placeholder="Item 5" id="item5" name="item5"/>
+                                <input style="margin-bottom: 15px;" type="text" placeholder="Item 5" id="item5" name="item5" />
                                 <input class="btn btn-primary btn-block" button type="submit" name="addlist" value="Add List"/>
                                 <input class="btn btn-primary btn-block" type="button" id="cancel" value="Cancel"/>
                             </form>

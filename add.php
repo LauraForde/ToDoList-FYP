@@ -7,8 +7,17 @@
 	);
 	//Establishes the connection
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+	$id = $_POST['id'];
+	$it1 = $_POST['item1'];
+	$it2 = $_POST['item2'];
+	$it3 = $_POST['item3'];
+	$it4 = $_POST['item4'];
+	$it5 = $_POST['item5'];
+
+	//echo $id.$it1.$it2.$it3.$it4.$it5;
 	$tsql= "INSERT INTO lists(listname, item1, item2, item3, item4, item5) VALUES (?,?,?,?,?,?);";
-	$params = array("shop", "1234", "gbfvd", "bgrvfd", "rbfd", "trgfe");
+	$params = array($id, $it1, $it2, $it3, $it4, $it5);
 	$getResults= sqlsrv_query($conn, $tsql, $params);
 	if ($getResults == FALSE)
 		echo print_r(sqlsrv_errors(), true);
