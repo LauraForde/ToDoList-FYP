@@ -62,9 +62,10 @@
         $connectionOptions = array(
             "Database" => "todolist",
             "Uid" => "laura",
-            "PWD" => "ABCd1234",
-            "MultipleActiveResultSets" => false
+            "PWD" => "ABCd1234"
         );
+        //Establishes the connection
+        $conn = sqlsrv_connect($serverName, $connectionOptions);
 
     ?>
 
