@@ -66,6 +66,20 @@
         );
         //Establishes the connection
         $conn = sqlsrv_connect($serverName, $connectionOptions);
+        if($conn === false){
+            die(print_r(sqslsrv_errors(), true));
+        }
+
+        $sql = "SELECT * FROM lists";
+        $stmt = sqlsrv_query($conn, $sql);
+
+        if($stmt === false){
+            die(print_r(sqlsrv_errors(), true));
+        }
+        while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)){
+            echo $row['listname']." ".$row['item1']." ".$row['item2']." ".$row['item3']." ".$row['item4']." ".$row['item5']."<br/>";
+        }
+        sqlsrv_free_stmt($stmt);
 
     ?>
 
