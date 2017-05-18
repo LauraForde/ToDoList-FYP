@@ -27,12 +27,21 @@
                                 <input style="margin-bottom: 15px;" type="text" placeholder="Item 4" id="item4" name="item4"/>
                                 <input style="margin-bottom: 15px;" type="text" placeholder="Item 5" id="item5" name="item5" />
                                 <input class="btn btn-primary btn-block" button type="submit" name="addlist" value="Add List"/>
-                                <input class="btn btn-primary btn-block" type="button" id="cancel" value="Cancel"/>
                             </form>
                         </div> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Edit List</a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Edit List <span class="sr-only">(current)</span></a>
+                    <div class="dropdown-menu" style="padding: 15px; padding-bottom: 15px;">
+                        <form method="post" id="editForm" action="update.php">
+                            <input style="margin-bottom: 15px;" type="text" placeholder="List ID" id="eid" name="eid"/>
+                            <input style="margin-bottom: 15px;" type="text" placeholder="Item 1" id="eitem1" name="eitem1"/>
+                            <input style="margin-bottom: 15px;" type="text" placeholder="Item 2" id="eitem2" name="eitem2"/>
+                            <input style="margin-bottom: 15px;" type="text" placeholder="Item 3" id="eitem3" name="eitem3"/>
+                            <input style="margin-bottom: 15px;" type="text" placeholder="Item 4" id="eitem4" name="eitem4"/>
+                            <input style="margin-bottom: 15px;" type="text" placeholder="Item 5" id="eitem5" name="eitem5" />
+                            <input class="btn btn-primary btn-block" button type="submit" name="editlist" value="Edit List"/>
+                        </form> 
                 </li>
                 <li class="nav-item">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Delete List <span class="sr-only">(current)</span></a>

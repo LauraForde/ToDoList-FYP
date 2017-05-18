@@ -8,9 +8,17 @@
 	//Establishes the connection
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
 
-	$id = $_POST['did'];
+	$eid = $_POST['eid'];
+	$eit1 = $_POST['eitem1'];
+	$eit2 = $_POST['eitem2'];
+	$eit3 = $_POST['eitem3'];
+	$eit4 = $_POST['eitem4'];
+	$eit5 = $_POST['eitem5'];
 
-	$tsql= "DELETE FROM lists WHERE listname = '$id'";
+
+	//echo $id.$it1.$it2.$it3.$it4.$it5;
+	$tsql= "UPDATE lists SET listname = '$eid', item1='$eit1',item2='$eit2',item3='$eit3',item4='$eit4',item5='$eit5' WHERE listname='$eid'";
+	//$params = array($did, $it1, $it2, $it3, $it4, $it5);
 	$getResults= sqlsrv_query($conn, $tsql);
 
 	if ($getResults){
