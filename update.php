@@ -1,13 +1,16 @@
 <?php
+    // Setting up credentials for the connection to the server
 	$serverName = "tdldatabase.database.windows.net";
 	$connectionOptions = array(
 		"Database" => "todolist",
 		"Uid" => "laura",
 		"PWD" => "ABCd1234"
 	);
-	//Establishes the connection
+
+	// Trying to connect
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
 
+    // Reading in variables from the html form
 	$eid = $_POST['eid'];
 	$eit1 = $_POST['eitem1'];
 	$eit2 = $_POST['eitem2'];
@@ -16,9 +19,8 @@
 	$eit5 = $_POST['eitem5'];
 
 
-	//echo $id.$it1.$it2.$it3.$it4.$it5;
-	$tsql= "UPDATE lists SET listname = '$eid', item1='$eit1',item2='$eit2',item3='$eit3',item4='$eit4',item5='$eit5' WHERE listname='$eid'";
-	//$params = array($did, $it1, $it2, $it3, $it4, $it5);
+	// Querying the database
+	$tsql= "UPDATE lists SET listname = '$eid', item1='$eit1',item2='$eit2',item3='$eit3',item4='$eit4',item5='$eit5' WHERE listname='$eid'";//$params = array($did, $it1, $it2, $it3, $it4, $it5);
 	$getResults= sqlsrv_query($conn, $tsql);
 
 	if ($getResults){

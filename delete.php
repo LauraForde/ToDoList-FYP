@@ -1,19 +1,23 @@
 <?php
+    // Setting up credentials for the connection to the server
 	$serverName = "tdldatabase.database.windows.net";
 	$connectionOptions = array(
 		"Database" => "todolist",
 		"Uid" => "laura",
 		"PWD" => "ABCd1234"
 	);
-	//Establishes the connection
+	//Trying to connect
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
 
+    // Reading in the variable from the html form
 	$id = $_POST['did'];
 
+    // Delete the item with the id entered
 	$tsql= "DELETE FROM lists WHERE listname = '$id'";
 	$getResults= sqlsrv_query($conn, $tsql);
 
 	if ($getResults){
+        // Redirect to the index.php file
         Redirect('http://todolisting.azurewebsites.net/index.php', false);
     }
 	else{

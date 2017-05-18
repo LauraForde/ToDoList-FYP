@@ -72,24 +72,30 @@
 </html> 
 
     <?php
+        // Setting up credentials for the connection to the server
         $serverName = "tdldatabase.database.windows.net";
         $connectionOptions = array(
             "Database" => "todolist",
             "Uid" => "laura",
             "PWD" => "ABCd1234"
         );
-        //Establishes the connection
+        
+        // Trying a connection
         $conn = sqlsrv_connect($serverName, $connectionOptions);
+        // If the connection doesn't work, show an error
         if($conn === false){
             die(print_r(sqslsrv_errors(), true));
         }
 
+        // Querying the database
         $sql = "SELECT * FROM lists";
         $stmt = sqlsrv_query($conn, $sql);
-
+        
+        // If the query can't be executed, show an error'
         if($stmt === false){
             die(print_r(sqlsrv_errors(), true));
         }
+        // While there is rows remaining, print each row
         while($row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)){
             echo $row['listname']." ".$row['item1']." ".$row['item2']." ".$row['item3']." ".$row['item4']." ".$row['item5']."<br/>";
         }

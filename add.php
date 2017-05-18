@@ -1,13 +1,15 @@
 <?php
+	// Setting up credentials for the connection to the server
 	$serverName = "tdldatabase.database.windows.net";
 	$connectionOptions = array(
 		"Database" => "todolist",
 		"Uid" => "laura",
 		"PWD" => "ABCd1234"
 	);
-	//Establishes the connection
+	//Trying to connect
 	$conn = sqlsrv_connect($serverName, $connectionOptions);
 
+	// Reading in all the variables from the form
 	$id = $_POST['id'];
 	$it1 = $_POST['item1'];
 	$it2 = $_POST['item2'];
@@ -15,18 +17,16 @@
 	$it4 = $_POST['item4'];
 	$it5 = $_POST['item5'];
 
-	//echo $id.$it1.$it2.$it3.$it4.$it5;
+	// Query the database and add the items
 	$tsql= "INSERT INTO lists(listname, item1, item2, item3, item4, item5) VALUES (?,?,?,?,?,?);";
 	$params = array($id, $it1, $it2, $it3, $it4, $it5);
+	
 	$getResults= sqlsrv_query($conn, $tsql, $params);
 	if ($getResults == FALSE)
 		echo print_r(sqlsrv_errors(), true);
 	else{
-		$rowsAffected = sqlsrv_rows_affected($getResults);
-		echo ($rowsAffected. " row(s) inserted" . PHP_EOL);
-		sqlsrv_free_stmt($getResults);
-
-	Redirect('http://todolisting.azurewebsites.net/index.php', false);
+		// Go back to the index.php file
+		Redirect('http://todolisting.azurewebsites.net/index.php', false);
 }
 
 	// http://stackoverflow.com/questions/768431/how-to-make-a-redirect-in-php
