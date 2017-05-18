@@ -26,9 +26,9 @@
 		echo ($rowsAffected. " row(s) inserted" . PHP_EOL);
 		sqlsrv_free_stmt($getResults);
 
-		Redirect('http://localhost:8080/todolist/index.php', false);
+		Redirect('http://todolisting.azurewebsites.net/index.php', false);
 	}
-	
+
 	// http://stackoverflow.com/questions/768431/how-to-make-a-redirect-in-php
 	function Redirect($url, $permanent = false){
 		header('Location: ' .$url, true, $permanent ? 301 : 302);

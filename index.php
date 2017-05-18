@@ -35,7 +35,7 @@
                     <a class="nav-link" href="#">Edit List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Delete List</a>
+                    <a class="nav-link" href="delete.php">Delete List</a>
                 </li> 
             </ul>
         </div>
